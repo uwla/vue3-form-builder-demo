@@ -10,6 +10,18 @@ export const model = {
     bio: "Commodo proident incididunt anim reprehenderit amet occaecat in exercitation fugiat minim reprehenderit irure voluptate ad.",
 };
 
+export const emptyModel = {
+    name: "",
+    email: "",
+    gender: "",
+    phone: "",
+    fruits: [],
+    website: "",
+    country: "",
+    agree: false,
+    bio: "",
+}
+
 export const messages = {
     name: "god job",
     email: "awesome",

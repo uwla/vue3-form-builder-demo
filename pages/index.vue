@@ -1,11 +1,13 @@
 <template>
     <h1>Hello</h1>
-    <TabView>
+    <vfb id="options" :fields="fieldsOptions" v-model="m" /> 
+
+    <TabView id="demo">
         <TabPanel header="VueFormBuilder">
             <vfb v-bind="commonParams" :fields="fields1" />
         </TabPanel>
         <TabPanel header="PrimeVue">
-            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
+            <!-- <vfb v-bind="commonParams" :fields="fields2" provider="primevue" /> -->
         </TabPanel>
     </TabView>
 </template>
@@ -16,6 +18,7 @@ import {
     fields2,
     fields3,
     model,
+    emptyModel,
     messages,
     errors,
     validation,
@@ -26,27 +29,46 @@ const commonParams = { model, messages, errors, validation };
 export default defineComponent({
     computed: {
         commonParams() {
+
             return {
-                errors,
-                model,
-                messages,
-                validation,
-                validateOnInput: this.validateOnInput,
-                validateOnSubmit: this.validateOnSubmit,
+                errors: (this.m.showErrors) ? errors : {},
+                defaults: (this.m.useModel) ? model : emptyModel,
+                messages: (this.m.showMessages) ? messages : {},
+                validateOnInput: this.m.validateOnInput,
+                validateOnSubmit: this.m.validateOnSubmit,
+                // validation,
             }
         } 
     },
     data: () => {
         return {
-            fields1, fields2, fields3,
-            validateOnInput: true,
-            validateOnSubmit: true,
+            fields1,
+            fields2,
+            fields3,
+            fieldsOptions: [ 
+                'checkbox|name:validateOnInput',
+                'checkbox|name:validateOnSubmit',
+                'checkbox|name:showMessages',
+                'checkbox|name:showErrors',
+                'checkbox|name:useModel',
+            ],
+            m: {
+                validateOnInput: true,
+                validateOnSubmit: true,
+                useModel: false,
+                showMessages: false,
+                showErrors: false,
+            },
         }
-    }
+    },
 });
 </script>
 <style>
-form {
+#options .vfb-group {
+    margin-bottom: 0;
+}
+
+#demo form {
     max-width: 500px;
     border: 1px solid #bbb;
     border-radius: 0.25em;
