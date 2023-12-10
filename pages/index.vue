@@ -7,7 +7,7 @@
             <vfb v-bind="commonParams" :fields="fields1" />
         </TabPanel>
         <TabPanel header="PrimeVue">
-            <!-- <vfb v-bind="commonParams" :fields="fields2" provider="primevue" /> -->
+            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
         </TabPanel>
     </TabView>
 </template>
