@@ -24,16 +24,17 @@ import {
     validation,
 } from "./data";
 
-const commonParams = { model, messages, errors, validation };
+const emptyErrors = {}
+const emptyMsg = {}
 
 export default defineComponent({
     computed: {
         commonParams() {
 
             return {
-                errors: (this.m.showErrors) ? errors : {},
-                defaults: (this.m.useModel) ? model : emptyModel,
-                messages: (this.m.showMessages) ? messages : {},
+                errors: (this.m.showErrors) ? errors : emptyErrors,
+                modelValue: (this.m.useModel) ? model : emptyModel,
+                messages: (this.m.showMessages) ? messages : emptyMsg,
                 validateOnInput: this.m.validateOnInput,
                 validateOnSubmit: this.m.validateOnSubmit,
                 // validation,
