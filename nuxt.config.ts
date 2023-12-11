@@ -1,10 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
-    modules: ["nuxt-primevue"],
+    modules: [
+        "nuxt-primevue",
+        "@nuxt-alt/vuetify",
+    ],
     css: [
-       'primevue/resources/themes/lara-light-teal/theme.css',
-       'vue-form-builder/dist/style.css',
+        'primevue/resources/themes/lara-light-teal/theme.css',
+        'vue-form-builder/dist/style.css',
     ],
     primevue: {
         components: {
@@ -14,4 +17,7 @@ export default defineNuxtConfig({
             ],
         },
     },
-});
+    vuetify: {
+        pluginOptions: { styles: 'none' }
+    }
+} as any);
