@@ -13,7 +13,8 @@ export default defineNuxtConfig({
         components: {
             include: [
                 "Button", "InputText", "Dialog", "Textarea",
-                "TabView", "TabPanel"
+                "TabView", "TabPanel", "ColorPicker", "Dropdown",
+                "Rating", "Chips", "Calendar"
             ],
         },
     },

@@ -90,11 +90,25 @@ export const fields1 = [
 ];
 
 export const fields2 = [
-    "name:name|text|min=5|max=30",
-    "name:email|email",
-    "name:phone|tel|label:Phone number",
-    "name:password|password|label:Choose your password",
-    "name:bio|textarea|label:Personal bio|rows=6",
+    // "name:name|text|min=5|max=30",
+    // "name:email|email",
+    // "name:phone|tel|label:Phone number",
+    // "name:password|password|label:Choose your password",
+    // "name:bio|textarea|label:Personal bio|rows=6",
+    "name:date|component:Calendar|label:Choose a date:|dateFormat=MM dd, yy",
+    {
+        name: 'city',
+        component: 'Dropdown',
+        props: { options: ['New York', 'Dubai', 'Chicago', 'Moscou', 'Rio de Janeiro'] }
+    },
+    {
+        name: 'rate',
+        label: 'Rate me!',
+        component: 'Rating',
+        props: { cancel: false, stars: 5 },
+    },
+    "name:tags|label:Enter tags:|component:Chips",
+    "name:color|label:Pick a color:|component:ColorPicker|class=color-picker",
     "component:vfb-buttons|label:none|class=block|submitText=SUBMIT|resetText=RESET",
 ];
 

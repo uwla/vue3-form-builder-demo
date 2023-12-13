@@ -1,13 +1,17 @@
 <template>
     <h1>Hello</h1>
-    <vfb id="options" :fields="fieldsOptions" v-model="m" /> 
+    <vfb id="options" :fields="fieldsOptions" v-model="m" />
 
-    <TabView id="demo">
+    <TabView id="demo" class="tabview-custom">
+        <TabPanel header="PrimeVue">
+            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
+        </TabPanel>
         <TabPanel header="VueFormBuilder">
             <vfb v-bind="commonParams" :fields="fields1" />
         </TabPanel>
-        <TabPanel header="PrimeVue">
-            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
+        <TabPanel header="vuetify">
+            Because Vuetify's CSS  conflicts with PrimeVue's one, the Vuetify
+            demo is available at <a target="blank" href="/vuetify">its own page</a>
         </TabPanel>
     </TabView>
 </template>
@@ -39,14 +43,14 @@ export default defineComponent({
                 validateOnSubmit: this.m.validateOnSubmit,
                 // validation,
             }
-        } 
+        }
     },
     data: () => {
         return {
             fields1,
             fields2,
             fields3,
-            fieldsOptions: [ 
+            fieldsOptions: [
                 'checkbox|name:validateOnInput',
                 'checkbox|name:validateOnSubmit',
                 'checkbox|name:showMessages',
@@ -77,8 +81,17 @@ export default defineComponent({
     margin: 0 auto;
 }
 
-.p-inputtext, .p-textarea {
-    display: block;
+.p-chips,
+.p-calendar,
+.p-inputtext,
+.p-textarea,
+.p-dropdown {
     width: 100%;
+}
+
+.color-picker {
+    margin-left: 8px;
+    width: 2em;
+    height: 2em;
 }
 </style>
