@@ -86,15 +86,10 @@ export const fields1 = [
     "name:country|stacked|options:United States,Mexico,Canada,Other",
     "name:agree|label:Agree to the terms and conditions|checkbox",
     "name:token|hidden|label:none|text",
-    "component:vfb-buttons|label:none|class=block|submitText=SUBMIT|resetText=RESET",
+    "component:vfb-buttons|label:none|class=block",
 ];
 
 export const fields2 = [
-    // "name:name|text|min=5|max=30",
-    // "name:email|email",
-    // "name:phone|tel|label:Phone number",
-    // "name:password|password|label:Choose your password",
-    // "name:bio|textarea|label:Personal bio|rows=6",
     "name:date|component:Calendar|label:Choose a date:|dateFormat=MM dd, yy",
     {
         name: 'city',
@@ -109,7 +104,12 @@ export const fields2 = [
     },
     "name:tags|label:Enter tags:|component:Chips",
     "name:color|label:Pick a color:|component:ColorPicker|class=color-picker",
-    "component:vfb-buttons|label:none|class=block|submitText=SUBMIT|resetText=RESET",
+    "name:name|text|min=5|max=30",
+    "name:email|email",
+    "name:phone|tel|label:Phone number",
+    "name:password|password|label:Choose your password",
+    "name:bio|textarea|label:Personal bio|rows=6",
+    "component:vfb-buttons|label:none|class=block",
 ];
 
 export const fields3 = [

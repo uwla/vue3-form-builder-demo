@@ -3,11 +3,11 @@
     <vfb id="options" :fields="fieldsOptions" v-model="m" />
 
     <TabView id="demo" class="tabview-custom">
-        <TabPanel header="PrimeVue">
-            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
-        </TabPanel>
         <TabPanel header="VueFormBuilder">
             <vfb v-bind="commonParams" :fields="fields1" />
+        </TabPanel>
+        <TabPanel header="PrimeVue">
+            <vfb v-bind="commonParams" :fields="fields2" provider="primevue" />
         </TabPanel>
         <TabPanel header="vuetify">
             Because Vuetify's CSS  conflicts with PrimeVue's one, the Vuetify
