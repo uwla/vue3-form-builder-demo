@@ -18,8 +18,8 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@nuxt-alt/vuetify": "^1.1.2",
     "sweetalert2": "^11.8.0",
-    "vue-form-builder": "file:../vue3-form-builder"
+    "vue-form-builder": "file:../vue3-form-builder",
+    "vuetify": "^3.4.6"
   }
 }

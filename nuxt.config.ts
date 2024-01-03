@@ -3,8 +3,11 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
     modules: [
         "nuxt-primevue",
-        "@nuxt-alt/vuetify",
+        // "@nuxt-alt/vuetify",
     ],
+    build: {
+        // transpile: ['vuetify']
+    },
     css: [
         'primevue/resources/themes/lara-light-teal/theme.css',
         'vue-form-builder/dist/style.css',
@@ -18,7 +21,4 @@ export default defineNuxtConfig({
             ],
         },
     },
-    vuetify: {
-        pluginOptions: { styles: 'none' }
-    }
 } as any);

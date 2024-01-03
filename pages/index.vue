@@ -11,7 +11,7 @@
         </TabPanel>
         <TabPanel header="vuetify">
             Because Vuetify's CSS  conflicts with PrimeVue's one, the Vuetify
-            demo is available at <a target="blank" href="/vuetify">its own page</a>
+            demo will be available in its own demo in the future.
         </TabPanel>
     </TabView>
 </template>
